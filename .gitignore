@@ -1,0 +1,35 @@
+# Generated audio, video, and image assets — track specs and prompts in git, not raw renders
+episodes/**/keyframes/
+episodes/**/audio/
+episodes/**/video/
+episodes/**/renders/
+episodes/**/exports/
+
+# User-uploaded reference images (large, treat as workspace not source)
+refs/leena/*.png
+refs/leena/*.jpg
+refs/june/*.png
+refs/june/*.jpg
+refs/vale/*.png
+refs/vale/*.jpg
+refs/style/*.png
+refs/style/*.jpg
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.python-version
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Env / secrets
+.env
+.env.local
+*.key
