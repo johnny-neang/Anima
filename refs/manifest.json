@@ -93,9 +93,9 @@
     "mira": {
       "soul_name": "Mira",
       "soul_id": "b9ef5c11-1d68-40e8-bf8f-4edb2820d4e0",
-      "soul_status": "training",
+      "soul_status": "ready",
       "training_cost_credits": 25,
-      "_note": "Triggered 2026-05-08 after Vale ready. Basic plan = 1 concurrent training.",
+      "_note": "Trained 2026-05-08 after Vale ready. All 4 Souls trained and ready.",
       "ref_count": 20,
       "media_ids": [
         "d7e8aa1f-a788-4f60-b417-c47d46313d94",

@@ -12,8 +12,8 @@ A prioritized, action-oriented list of what we do _next_, in roughly the order t
 ## 0. Wait out the queue (passive)
 
 - [x] Vale Soul training to `ready` — `66c42015-c664-446d-8555-8836f81663e6`.
-- [x] Trigger Mira Soul training — `b9ef5c11-1d68-40e8-bf8f-4edb2820d4e0` (in flight).
-- [ ] Mira Soul training to `ready` (~5–15 min wall-clock).
+- [x] Trigger Mira Soul training — `b9ef5c11-1d68-40e8-bf8f-4edb2820d4e0`.
+- [x] Mira Soul training to `ready`. **All 4 Souls trained.**
 
 **Owner:** simplest path is to ping me when Vale flips to ready — I'll trigger Mira immediately. Alternatively, kick Mira off via the Higgsfield MCP yourself once Vale is done; the URL list to use is in `refs/manifest.json` under `characters.mira.media_ids` (translated to the same `https://d2ol7oe51mr4n9.cloudfront.net/<user_path>/<media_id>.png` form we used for the others).
 

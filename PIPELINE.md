@@ -48,7 +48,7 @@ Single source of truth for production state, blocking dependencies, and token-co
 | Leena Ortiz   |   20 | ✅                  | **ready** ✅       | `1012370e-3cf7-486a-b644-88b174395b13` |
 | June          |   20 | ✅                  | **ready** ✅       | `5949fbd6-dbb4-4672-b6de-06e6a488ba47` |
 | General Vale  |   19 | ✅                  | **ready** ✅       | `66c42015-c664-446d-8555-8836f81663e6` |
-| Mira          |   20 | ✅                  | **training** ⏳    | `b9ef5c11-1d68-40e8-bf8f-4edb2820d4e0` |
+| Mira          |   20 | ✅                  | **ready** ✅       | `b9ef5c11-1d68-40e8-bf8f-4edb2820d4e0` |
 
 - [x] Upload 79 character refs across 4 characters (parallel curl, all HTTP 200)
 - [x] Confirm 79 `media_id`s via `media_confirm` (status: uploaded)
