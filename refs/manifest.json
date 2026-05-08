@@ -1,0 +1,131 @@
+{
+  "_comment": "Manifest of uploaded character refs and Higgsfield Soul training state. Source images live as PNG binaries in refs/<char>/ (gitignored). After upload + media_confirm, files are mirrored to https://d2ol7oe51mr4n9.cloudfront.net/<user_path>/<media_id>.png — the URL form is required for show_characters action='train' (the MCP description's 'media_id UUIDs' is misleading; only the public CDN URL works).",
+  "user_path": "user_36ReUHdYfGq2UZ2JGS0ZBMW5Z4K",
+  "asset_cdn": "https://d2ol7oe51mr4n9.cloudfront.net",
+  "characters": {
+    "leena": {
+      "soul_name": "Leena Ortiz",
+      "soul_id": "1012370e-3cf7-486a-b644-88b174395b13",
+      "soul_status": "ready",
+      "training_cost_credits": 25,
+      "ref_count": 20,
+      "media_ids": [
+        "2d4229a1-e4c5-4ff9-8238-f98f106edbc9",
+        "4a9805fb-cfd6-4f06-bd01-0bc4b2d2cb35",
+        "db022e12-51b8-478c-9916-9b98c24d9504",
+        "139cd7a8-b5af-4c8a-af5d-3784aa8a52bc",
+        "2903c59f-2e66-4e42-898a-03019242dffa",
+        "a76263d6-4847-45aa-b42b-23491861dced",
+        "82d2acbc-712a-4ad2-9795-262218769765",
+        "380aa316-0fae-439e-9c6a-99a40fbac856",
+        "dae74124-dd24-4949-80b0-1a09b055008f",
+        "0ddf802d-c7a0-4fda-9b1f-9bb4480051d1",
+        "2c9f0ac0-e20b-4066-b135-3b20a67aae84",
+        "2f554f3f-da4b-428b-9f7d-91558f0b719e",
+        "cc586a7d-ed54-4714-9a65-3970f6ebabde",
+        "b64ff90d-b871-4e4c-9f4c-0dc026fdf2cc",
+        "be50acb1-c587-4da9-8b30-af9a4ac2c323",
+        "cd7fe733-6288-4c67-87ad-197482d6b142",
+        "b4bbb7e3-b449-417a-8ebb-85f4918bb9f8",
+        "053a855c-77db-4014-9a76-61f3024909a5",
+        "08aebe66-012a-43c4-aa3c-ec188899f234",
+        "3b24f072-d359-4dab-9bfc-2edece2f5ac4"
+      ]
+    },
+    "june": {
+      "soul_name": "June",
+      "soul_id": "5949fbd6-dbb4-4672-b6de-06e6a488ba47",
+      "soul_status": "ready",
+      "training_cost_credits": 25,
+      "ref_count": 20,
+      "media_ids": [
+        "edbd3fa8-b2ff-4670-9a57-ccac1d5f215f",
+        "4abd8e31-15bd-494f-88af-b1a0af840e97",
+        "979d9984-7505-4f0a-80a5-7639aa83dba7",
+        "980ab6a1-6c23-4bc4-8d81-4c57bba2a39b",
+        "10a3ce9b-d55f-4f18-b821-776860eff878",
+        "3564f4f1-85f7-48de-9613-c9d876a44d5c",
+        "50dd9bde-716f-409f-9fb0-86e8f869b892",
+        "68c07f03-f1b5-4bdb-b51e-278fae653ae6",
+        "53a2e6df-7b1e-42e8-96d1-20c89b07b373",
+        "4f25bb22-68b0-4a9a-9623-d0253803796d",
+        "4c068832-1088-44b1-a0f5-e6dbc4ae0525",
+        "c9b86cdb-009b-433d-8eea-8accada6e16f",
+        "a7ca1f0a-b37d-437d-9e5a-902d16a2f346",
+        "ed37df40-b98e-44b4-a9ca-1be1f4be0e67",
+        "fc9b51f6-f75f-47ae-b11d-2ad544e5bdd3",
+        "948d06b0-25a3-414c-a277-e4a665433153",
+        "101b9226-d238-44ac-8d70-44d016560ed4",
+        "f4fcbf88-0a01-4ed1-85ca-393df972479a",
+        "53334fe6-019a-4beb-9350-e3fb2e7bf9d3",
+        "e4e3d90c-76df-4295-a534-3f269e119dee"
+      ]
+    },
+    "vale": {
+      "soul_name": "General Vale",
+      "soul_id": "66c42015-c664-446d-8555-8836f81663e6",
+      "soul_status": "ready",
+      "training_cost_credits": 25,
+      "_note": "Triggered 2026-05-08 after June ready. Basic plan = 1 concurrent training.",
+      "ref_count": 19,
+      "media_ids": [
+        "9b4791b6-6acb-4bb6-9c57-d9f52d2f94a4",
+        "1d0e40e6-59c3-4a55-9e7b-2777df63b6d2",
+        "ed82ca93-7186-463a-8786-5d8727f37918",
+        "2273a7b5-2229-4634-abe0-b9ab0eb2cf76",
+        "64c5f807-ffe7-4e2a-ab23-3422fb194a32",
+        "7ac7b1be-b2c9-4923-8165-e11e4fe32b32",
+        "88049315-1d3b-4e4b-b82f-722d61538540",
+        "dc8731e4-bf49-420f-bdd7-9466146a431a",
+        "49a92caf-8141-436b-85d8-076c133ce56c",
+        "2b404561-e7a6-453b-ae66-47b85faf1114",
+        "572bce19-5447-4d89-91e1-3dc4710d284b",
+        "cf305f01-9d35-4444-b77a-a9f1b203a296",
+        "06a9d04d-893a-44fe-a7d3-367fd4adb53b",
+        "68a25def-7bd6-4d5f-89c8-1bb2e845b66d",
+        "781bf005-7a5f-4e62-8480-8e818fc076c7",
+        "c1817579-0030-45b3-9301-0ae143b75382",
+        "76ba3109-f50f-4ff4-9b2e-9473265dc8c9",
+        "ead3c7c1-dd44-4d80-b5f7-779acd6218f8",
+        "3f6c4289-e886-4717-9646-35e8c6206931"
+      ]
+    },
+    "mira": {
+      "soul_name": "Mira",
+      "soul_id": "b9ef5c11-1d68-40e8-bf8f-4edb2820d4e0",
+      "soul_status": "training",
+      "training_cost_credits": 25,
+      "_note": "Triggered 2026-05-08 after Vale ready. Basic plan = 1 concurrent training.",
+      "ref_count": 20,
+      "media_ids": [
+        "d7e8aa1f-a788-4f60-b417-c47d46313d94",
+        "271a19ba-4065-4a12-8b01-1ed388fa1a8e",
+        "3eba3c3f-ff18-48f4-b656-78e5c8218d22",
+        "02f4a228-f864-42c3-9fa6-91808484efd3",
+        "30eb2293-8d05-47ce-8f44-bc6a990ce4fb",
+        "5a1f11b5-567b-44dc-83a7-f2f2b27b7d07",
+        "574bfb62-fb93-4aa8-b7fd-a228f8a49f29",
+        "6916591b-861a-478f-8f34-b39711330a71",
+        "bff79c52-810d-468f-b0d6-572083ac8ba6",
+        "00da5e15-82db-4cfa-8a54-8719d803f3ef",
+        "1ce05a86-9bd7-4818-a6f5-e32698c8a28a",
+        "37eabf7f-aaa4-47f5-bde6-4890a862f016",
+        "d901cce4-9c3b-4e3e-af4f-57e6fee6f9c5",
+        "1453c054-c847-48a5-803f-e8203ab5b889",
+        "3b6d4984-07c9-428b-931d-9e5872d21375",
+        "b19b9cfd-bc57-439d-a480-13ac4b0243b3",
+        "843ccb0d-be6b-45a7-b3e1-e52419d03af3",
+        "9289d71d-2e20-4fac-976f-663a106cdf52",
+        "f12ae786-b6ac-44a4-9b19-ef4a2fa68d2f",
+        "002fabe5-314b-45b6-9a4d-dc6a6b634937"
+      ]
+    }
+  },
+  "discarded_souls": [
+    {
+      "soul_id": "f50c9a20-00e2-4e76-a4b8-fced41bb0d92",
+      "name": "Test Probe URL",
+      "reason": "Probe to discover URL-form requirement for training. Trained on 5 duplicates of one image. Cost 25 credits. Ignore in pipeline."
+    }
+  ]
+}

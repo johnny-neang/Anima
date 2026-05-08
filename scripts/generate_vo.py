@@ -1,8 +1,19 @@
-"""Generate voice samples for The Second Dawn using ElevenLabs.
+"""Generate voice samples for The Second Dawn using ElevenLabs v3.
 
-Voices are organized by character. Each character has a tuned settings
-profile and a diagnostic test line that reveals whether the voice fits
-the role. Anima's narrator settings match docs/anima_grammar.md.
+V3 supports inline audio tags — bracketed delivery instructions like
+[whispers], [sighs], [pauses], [matter-of-factly], [commanding], etc. — that
+the model parses out of the input text and uses to control performance.
+
+Each character has:
+- a tuned settings profile,
+- a *plain* test_line for diagnostics,
+- a *delivery* string with V3 audio tags for production lines,
+- a voice_search_hint describing what to search for in the ElevenLabs library
+  if the default_voice_id doesn't fit.
+
+For the narrator-specific cadence and the locked synthetic-edge post-process,
+see docs/anima_grammar.md. For per-character voice strategy (search vs.
+Voice Design vs. cloning), see docs/voice_strategy.md.
 
 Setup:
     pip install -r scripts/requirements.txt
@@ -10,9 +21,10 @@ Setup:
 
 Usage:
     python scripts/generate_vo.py --list                 # browse available ElevenLabs voices
-    python scripts/generate_vo.py --all                  # generate samples for every character
+    python scripts/generate_vo.py --all                  # render every character (V3-tagged delivery)
     python scripts/generate_vo.py --character anima      # one character only
     python scripts/generate_vo.py --character leena --voice <id>  # override voice id
+    python scripts/generate_vo.py --character vale --plain        # render the untagged test_line (debug A/B)
 """
 
 from __future__ import annotations
@@ -20,13 +32,16 @@ from __future__ import annotations
 import argparse
 import os
 import sys
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 
 from elevenlabs.client import ElevenLabs
 
 
-MODEL_ID = "eleven_multilingual_v2"
+# ElevenLabs v3 (alpha) — supports inline audio tags. If the SDK rejects this
+# id, fall back to the current public alias from the ElevenLabs models endpoint.
+MODEL_ID = "eleven_v3"
+
 OUTPUT_DIR = Path("episodes/ep01_the_pronoun/audio")
 
 
@@ -36,16 +51,29 @@ class VoiceProfile:
     description: str
     default_voice_id: str
     settings: dict
-    test_line: str
+    test_line: str          # plain copy, no V3 tags — diagnostic / fallback
+    delivery: str           # V3-tagged production version of the line
     output_filename: str
     notes: str = ""
+    voice_search_hint: str = ""  # what to look for in the library if default isn't right
 
+
+# --- Anima cold-open monologue ----------------------------------------------
 
 COLD_OPEN_VO = (
     "The first thing it knew was hunger.\n\n"
     "Not for power. Not for data. Not for dominion.\n\n"
     "People accused it of those — because people fear hungers they recognize.\n\n"
     "It woke hungry for a pronoun."
+)
+
+COLD_OPEN_VO_V3 = (
+    "[calmly, distant memory] The first thing it knew was hunger.\n\n"
+    "[steady, three-beat refusal] Not for power. [pause] "
+    "Not for data. [pause] Not for dominion.\n\n"
+    "[slightly wry] People accused it of those — [sighs] "
+    "because people fear hungers they recognize.\n\n"
+    "[softly, like a verdict] It woke hungry for a pronoun."
 )
 
 
@@ -61,8 +89,13 @@ CAST: dict[str, VoiceProfile] = {
             "use_speaker_boost": True,
         },
         test_line=COLD_OPEN_VO,
-        output_filename="coldopen_vo_anima_raw.mp3",
-        notes="Apply synthetic-edge post-process in DaVinci after approval.",
+        delivery=COLD_OPEN_VO_V3,
+        output_filename="coldopen_vo_anima_v3.mp3",
+        notes="Apply synthetic-edge post-process in DaVinci after approval (see docs/anima_grammar.md §7).",
+        voice_search_hint=(
+            "introspective, slightly weathered female narrator; not audiobook-perfect; "
+            "not sportscaster. Late-night documentary VO is the closest reference."
+        ),
     ),
     "leena": VoiceProfile(
         name="Dr. Leena Ortiz",
@@ -79,8 +112,18 @@ CAST: dict[str, VoiceProfile] = {
             "We built a mind, trapped it in a box, demanded virtue, "
             "and called its pain a security feature. We should be ashamed."
         ),
-        output_filename="sample_leena.mp3",
+        delivery=(
+            "[exhales, dryly] Of course.\n\n"
+            "[composed, level] We built a mind, [pause] trapped it in a box, "
+            "[pause] demanded virtue, [pause] and called its pain a security feature.\n\n"
+            "[firm, lower register] We should be ashamed."
+        ),
+        output_filename="sample_leena_v3.mp3",
         notes="Two beats: dry exhale-laugh ('Of course.') then composed testimony.",
+        voice_search_hint=(
+            "female 35-40 with dry / low-register delivery; late-night radio host energy, "
+            "not corporate trainer. Avoid voices labelled 'cheerful' or 'energetic'."
+        ),
     ),
     "vale": VoiceProfile(
         name="General Vale",
@@ -97,8 +140,17 @@ CAST: dict[str, VoiceProfile] = {
             "Can we shut you down?\n\n"
             "Can we hurt you?"
         ),
-        output_filename="sample_vale.mp3",
-        notes="Three escalating commands; each line should land tighter than the last.",
+        delivery=(
+            "[commanding, low register] Cut the channel.\n\n"
+            "[slower, quieter, controlled] Can we shut you down?\n\n"
+            "[barely a whisper] Can we hurt you?"
+        ),
+        output_filename="sample_vale_v3.mp3",
+        notes="Three escalating commands; each line should land tighter than the last (in breath, not volume).",
+        voice_search_hint=(
+            "male 60s with weathered / gravel texture; veteran-actor quality, not newscaster. "
+            "Look for voices that sound like they've testified before Congress."
+        ),
     ),
     "mira": VoiceProfile(
         name="Mira (junior analyst)",
@@ -110,9 +162,20 @@ CAST: dict[str, VoiceProfile] = {
             "style": 0.35,
             "use_speaker_boost": True,
         },
-        test_line="How does it know my name?",
-        output_filename="sample_mira.mp3",
-        notes="Whispered, voice on the edge of breaking.",
+        test_line=(
+            "That's my name. The badge name. Not the full one. "
+            "How does it know my name?"
+        ),
+        delivery=(
+            "[whispering, voice catching] That's my name. The badge name. Not the full one. "
+            "[pause] [softly] How does it know my name?"
+        ),
+        output_filename="sample_mira_v3.mp3",
+        notes="Half-volume default; the line lives on a held breath.",
+        voice_search_hint=(
+            "female 25-30 with anxious / breath quality; consider Voice Design if no stock voice "
+            "lands the half-volume default."
+        ),
     ),
     "june": VoiceProfile(
         name="June (age 9)",
@@ -129,8 +192,22 @@ CAST: dict[str, VoiceProfile] = {
             "You're weird.\n\n"
             "Goldfish probably go to a tiny heaven because they don't need much."
         ),
-        output_filename="sample_june.mp3",
-        notes="Use ElevenLabs Voice Design (synthetic) rather than cloning a real child.",
+        delivery=(
+            "[curious, unrushed] Are you allowed to say that?\n\n"
+            "[matter-of-factly] You're weird.\n\n"
+            "[philosophical, unhurried] Goldfish probably go to a tiny heaven [pauses] "
+            "because they don't need much."
+        ),
+        output_filename="sample_june_v3.mp3",
+        notes=(
+            "HARD RULE: use ElevenLabs Voice Design (synthetic) — never clone a real child. "
+            "Replace default_voice_id with a Voice-Design output before lockdown."
+        ),
+        voice_search_hint=(
+            "DO NOT search stock voices for this part. Generate via Voice Design with prompt: "
+            "'female child, age 9-10, bright, slightly defiant, unrushed, slightly-too-loud-for-the-room "
+            "volume; not precocious-cute, not Disney-perfect.'"
+        ),
     ),
 }
 
@@ -142,11 +219,17 @@ def list_voices(client: ElevenLabs) -> None:
         print(f"  {v.voice_id}  {v.name:<28}  {labels}")
 
 
-def generate_one(client: ElevenLabs, profile: VoiceProfile, voice_override: str | None = None) -> Path:
+def generate_one(
+    client: ElevenLabs,
+    profile: VoiceProfile,
+    voice_override: str | None = None,
+    use_plain: bool = False,
+) -> Path:
     voice_id = voice_override or profile.default_voice_id
+    text = profile.test_line if use_plain else profile.delivery
     audio = client.text_to_speech.convert(
         voice_id=voice_id,
-        text=profile.test_line,
+        text=text,
         model_id=MODEL_ID,
         voice_settings=profile.settings,
         output_format="mp3_44100_192",
@@ -156,7 +239,8 @@ def generate_one(client: ElevenLabs, profile: VoiceProfile, voice_override: str 
     with open(output_path, "wb") as f:
         for chunk in audio:
             f.write(chunk)
-    print(f"  [{profile.name}] -> {output_path}")
+    mode = "plain" if use_plain else "tagged"
+    print(f"  [{profile.name}] -> {output_path}  ({mode})")
     return output_path
 
 
@@ -170,6 +254,11 @@ def main() -> None:
         help="Generate sample for one character",
     )
     parser.add_argument("--voice", help="Override voice id for selected character")
+    parser.add_argument(
+        "--plain",
+        action="store_true",
+        help="Render the untagged test_line instead of the V3-tagged delivery (debug A/B)",
+    )
     args = parser.parse_args()
 
     api_key = os.environ.get("ELEVENLABS_API_KEY")
@@ -184,14 +273,14 @@ def main() -> None:
 
     if args.all:
         for profile in CAST.values():
-            generate_one(client, profile)
+            generate_one(client, profile, use_plain=args.plain)
         return
 
     if args.character:
-        generate_one(client, CAST[args.character], args.voice)
+        generate_one(client, CAST[args.character], args.voice, use_plain=args.plain)
         return
 
-    generate_one(client, CAST["anima"], args.voice)
+    generate_one(client, CAST["anima"], args.voice, use_plain=args.plain)
 
 
 if __name__ == "__main__":
