@@ -8,10 +8,14 @@
           {
             "type": "command",
             "command": "cd \"$CLAUDE_PROJECT_DIR\" && python3 production/coherence/coherence.py check 2>&1 | sed 's/^/[coherence] /' || true"
+          },
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && python3 production/dashboard/generate.py 2>&1 | sed 's/^/[dashboard] /' || true"
           }
         ]
       }
     ]
   },
-  "_comment": "Stop hook runs the coherence engine after every assistant turn. Output is prefixed with [coherence] and routed through `|| true` so it never blocks. To disable, remove the `Stop` block. To trigger manually: `python3 production/coherence/coherence.py check`."
+  "_comment": "Stop hooks fire at the end of every assistant turn. (1) coherence check: detects stale artifacts. (2) dashboard regen: updates production/dashboard/index.html. Both are non-blocking (|| true). To disable, remove the entry. Manual triggers: `python3 production/coherence/coherence.py check` and `python3 production/dashboard/generate.py`."
 }

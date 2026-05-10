@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "python3 production/dashboard/generate.py",
+  "outputDirectory": "production/dashboard",
+  "framework": null,
+  "installCommand": "echo 'no install needed — stdlib only'",
+  "github": {
+    "silent": true
+  }
+}
