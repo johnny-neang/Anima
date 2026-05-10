@@ -174,6 +174,17 @@
       "notes": "V1.1 approved 2026-05-10: 12-shot cold open kept, terminal inserts full-frame + printed inserts letterboxed, shot 24 budget 3, ensemble stylized."
     },
     {
+      "id": "ep01.animatic",
+      "path": "production/episodes/ep01_hunger/animatic/descriptor.json",
+      "stage": "animatic",
+      "status": "draft",
+      "episode": "ep01",
+      "authority_for": ["ep01.animatic_timing", "ep01.scratch_vo_assignments"],
+      "depends_on": ["ep01.shotlist", "ep01.script"],
+      "last_updated": "2026-05-10",
+      "notes": "V1 scaffold: descriptor.json + README; boards + scratch VO + MP4 pending producer go-ahead on budget."
+    },
+    {
       "id": "ep02.synopsis",
       "path": "production/episodes/ep02_almost/synopsis.md",
       "stage": "synopsis",
