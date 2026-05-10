@@ -166,12 +166,12 @@
       "id": "ep01.shotlist",
       "path": "production/episodes/ep01_hunger/shotlist.md",
       "stage": "shotlist",
-      "status": "draft",
+      "status": "approved",
       "episode": "ep01",
       "authority_for": ["ep01.shots", "ep01.cost_model", "ep01.calibration_shot"],
       "depends_on": ["ep01.script", "ep01.synopsis", "series.beat_sheet", "lookdev.style_anchor", "source.refs_manifest"],
       "last_updated": "2026-05-10",
-      "notes": "V1: 48 shots, ~3560 credits estimated, calibration on shot 24 (the printer)."
+      "notes": "V1.1 approved 2026-05-10: 12-shot cold open kept, terminal inserts full-frame + printed inserts letterboxed, shot 24 budget 3, ensemble stylized."
     },
     {
       "id": "ep02.synopsis",

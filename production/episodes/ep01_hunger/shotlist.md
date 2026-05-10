@@ -154,12 +154,14 @@ The shots that need more than the table row provides.
 
 ---
 
-## Open per-shotlist questions
+## Resolved decisions (locked 2026-05-10)
 
-1. **Cold open shot count.** 12 shots is generous; the script does not strictly require all 12 if cutting tightens the sequence. Trim candidates: shot 05 (shipping lane triptych) and shot 11 (coral reef) — both beautiful but the audience can lose them without losing the storm. _My recommendation: keep all 12 in animatic, decide on the cut from there._
-2. **Aspect ratio for inserts (shots 18, 20, 21, 22, 23, 32, 34, 40, 42, 47).** Full 1.85:1 frame, or letterboxed to a different ratio (e.g. 1:1) to signal _this is an in-world artifact, not the show's main frame_? **My recommendation: full 1.85:1 for terminal inserts (the show is _inside_ the terminal in those moments), letterboxed slightly for printed inserts (the printer page should feel like a document being handled).**
-3. **Re-render budget on the calibration shot (24).** I set it at 2. Real cost-aware budget would be 3, because if shot 24 fails twice we need to know the keyframe is the problem, not the video. _My recommendation: budget 3 on shot 24 only._
-4. **Shot 30 — should the 12 people in the observation room be 12 distinct characters or a stylized "twelve, plus our three"?** Stylized is cheaper, faster, and probably stronger — the audience tracks Leena, Vale, Mira and reads "twelve" without counting. _My recommendation: stylized._
+1. **Cold open shot count: keep all 12 in animatic.** Decision on trims happens at animatic review, not before. Shots 05 (shipping lane triptych) and 11 (coral reef) are the candidates for cut if pacing drags.
+2. **Aspect ratio for inserts:**
+   - **Terminal inserts** (shots 18, 20, 32, 34, 40, 42, 47): full 1.85:1 frame. The show is _inside_ the terminal in these moments — the audience should not feel walled off from it.
+   - **Printed inserts** (shots 21, 22, 23, the Morrow letter): subtle letterbox to ~1.5:1, with a fountain-pen serif on textured paper. The audience should feel they are looking _at_ a document being handled, not _through_ a window.
+3. **Re-render budget on the calibration shot (24): 3.** If shot 24 fails twice we need to know the keyframe is the problem, not the video. This is the only shot in the season with a 3-rerender budget. Cost impact: ~5 extra credits, immaterial.
+4. **Shot 30 — observation room ensemble: stylized.** Three Souls (Leena, Vale, Mira) plus nine non-Soul figures shaped from the style anchor only. The audience tracks the three named characters and reads "twelve" from the room shape — they do not count people.
 
 ---
 
