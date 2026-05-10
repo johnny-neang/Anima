@@ -163,6 +163,17 @@
       "notes": "V1 approved 2026-05-10: kept Vale's second 'Cut the channel', Mira's chair audio-only, three cursor blinks."
     },
     {
+      "id": "ep01.shotlist",
+      "path": "production/episodes/ep01_hunger/shotlist.md",
+      "stage": "shotlist",
+      "status": "draft",
+      "episode": "ep01",
+      "authority_for": ["ep01.shots", "ep01.cost_model", "ep01.calibration_shot"],
+      "depends_on": ["ep01.script", "ep01.synopsis", "series.beat_sheet", "lookdev.style_anchor", "source.refs_manifest"],
+      "last_updated": "2026-05-10",
+      "notes": "V1: 48 shots, ~3560 credits estimated, calibration on shot 24 (the printer)."
+    },
+    {
       "id": "ep02.synopsis",
       "path": "production/episodes/ep02_almost/synopsis.md",
       "stage": "synopsis",
