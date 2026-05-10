@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && python3 production/coherence/coherence.py check 2>&1 | sed 's/^/[coherence] /' || true"
+          }
+        ]
+      }
+    ]
+  },
+  "_comment": "Stop hook runs the coherence engine after every assistant turn. Output is prefixed with [coherence] and routed through `|| true` so it never blocks. To disable, remove the `Stop` block. To trigger manually: `python3 production/coherence/coherence.py check`."
+}

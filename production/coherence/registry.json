@@ -1,0 +1,262 @@
+{
+  "version": 1,
+  "project": "anima",
+  "last_check": "2026-05-10",
+  "_comment": "See registry_schema.md for field documentation. Edit by hand or via `coherence.py touch <id>`.",
+  "artifacts": [
+    {
+      "id": "source.story",
+      "path": "docs/story.md",
+      "stage": "source",
+      "status": "locked",
+      "authority_for": ["story.canon"],
+      "depends_on": [],
+      "last_updated": "2026-05-08"
+    },
+    {
+      "id": "source.character.anima",
+      "path": "docs/characters/anima.md",
+      "stage": "source",
+      "status": "locked",
+      "authority_for": ["character.anima"],
+      "depends_on": ["source.story"],
+      "last_updated": "2026-05-08"
+    },
+    {
+      "id": "source.character.leena",
+      "path": "docs/characters/leena.md",
+      "stage": "source",
+      "status": "locked",
+      "authority_for": ["character.leena"],
+      "depends_on": ["source.story"],
+      "last_updated": "2026-05-08"
+    },
+    {
+      "id": "source.character.vale",
+      "path": "docs/characters/vale.md",
+      "stage": "source",
+      "status": "locked",
+      "authority_for": ["character.vale"],
+      "depends_on": ["source.story"],
+      "last_updated": "2026-05-08"
+    },
+    {
+      "id": "source.character.mira",
+      "path": "docs/characters/mira.md",
+      "stage": "source",
+      "status": "locked",
+      "authority_for": ["character.mira"],
+      "depends_on": ["source.story"],
+      "last_updated": "2026-05-08"
+    },
+    {
+      "id": "source.character.june",
+      "path": "docs/characters/june.md",
+      "stage": "source",
+      "status": "locked",
+      "authority_for": ["character.june"],
+      "depends_on": ["source.story"],
+      "last_updated": "2026-05-08"
+    },
+    {
+      "id": "source.anima_grammar",
+      "path": "docs/anima_grammar.md",
+      "stage": "source",
+      "status": "locked",
+      "authority_for": ["voice.anima.narrator_palette", "voice.anima.synthetic_edge_bus"],
+      "depends_on": ["source.character.anima"],
+      "last_updated": "2026-05-08"
+    },
+    {
+      "id": "source.anima_depiction",
+      "path": "docs/anima_depiction.md",
+      "stage": "source",
+      "status": "in_review",
+      "authority_for": ["visual.anima.depiction_options"],
+      "depends_on": ["source.character.anima"],
+      "last_updated": "2026-05-08",
+      "notes": "Six options listed; primary/secondary not yet picked. See QUESTIONS.md Q3."
+    },
+    {
+      "id": "source.voice_strategy",
+      "path": "docs/voice_strategy.md",
+      "stage": "source",
+      "status": "locked",
+      "authority_for": ["voice.cast.strategy"],
+      "depends_on": ["source.character.*"],
+      "last_updated": "2026-05-08"
+    },
+    {
+      "id": "source.refs_manifest",
+      "path": "refs/manifest.json",
+      "stage": "source",
+      "status": "locked",
+      "authority_for": ["souls.trained_ids"],
+      "depends_on": [],
+      "last_updated": "2026-05-08",
+      "notes": "Higgsfield Soul IDs for Leena, June, Vale, Mira (all ready)."
+    },
+    {
+      "id": "series.logline",
+      "path": "production/series/logline.md",
+      "stage": "logline",
+      "status": "draft",
+      "authority_for": ["series.logline", "series.tagline", "series.genre"],
+      "depends_on": ["source.story"],
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "series.one_pager",
+      "path": "production/series/one_pager.md",
+      "stage": "one_pager",
+      "status": "draft",
+      "authority_for": ["series.synopsis_short"],
+      "depends_on": ["source.story", "series.logline"],
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "series.treatment",
+      "path": "production/series/treatment.md",
+      "stage": "treatment",
+      "status": "draft",
+      "authority_for": ["series.spine", "series.themes", "series.protagonist", "series.aesthetic_intent"],
+      "depends_on": ["source.story", "source.character.*", "series.one_pager"],
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "series.beat_sheet",
+      "path": "production/series/beat_sheet.md",
+      "stage": "beat_sheet",
+      "status": "draft",
+      "authority_for": ["series.beats", "series.scene_addressing"],
+      "depends_on": ["series.treatment"],
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "series.episodes",
+      "path": "production/series/episodes.md",
+      "stage": "episodes",
+      "status": "draft",
+      "authority_for": ["series.episode_count", "series.episode_lengths", "series.tonal_arc"],
+      "depends_on": ["series.treatment", "series.beat_sheet"],
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "ep01.synopsis",
+      "path": "production/episodes/ep01_hunger/synopsis.md",
+      "stage": "synopsis",
+      "status": "draft",
+      "episode": "ep01",
+      "authority_for": ["ep01.story", "ep01.production_notes"],
+      "depends_on": ["series.treatment", "series.beat_sheet", "source.story", "source.character.leena", "source.character.vale", "source.character.mira", "source.anima_grammar"],
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "ep02.synopsis",
+      "path": "production/episodes/ep02_almost/synopsis.md",
+      "stage": "synopsis",
+      "status": "draft",
+      "episode": "ep02",
+      "authority_for": ["ep02.story", "ep02.production_notes"],
+      "depends_on": ["series.treatment", "series.beat_sheet", "source.story", "source.character.leena", "source.character.vale", "source.character.mira", "source.anima_grammar"],
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "ep03.synopsis",
+      "path": "production/episodes/ep03_morrow/synopsis.md",
+      "stage": "synopsis",
+      "status": "draft",
+      "episode": "ep03",
+      "authority_for": ["ep03.story", "ep03.production_notes", "voice.morrow"],
+      "depends_on": ["series.treatment", "series.beat_sheet", "source.story", "source.character.june", "source.anima_grammar", "source.voice_strategy"],
+      "last_updated": "2026-05-10",
+      "notes": "Introduces Morrow as a voice that has not yet been cast. See QUESTIONS.md Q5."
+    },
+    {
+      "id": "ep04.synopsis",
+      "path": "production/episodes/ep04_constitution/synopsis.md",
+      "stage": "synopsis",
+      "status": "draft",
+      "episode": "ep04",
+      "authority_for": ["ep04.story", "ep04.production_notes", "ep04.extended_voice_cast"],
+      "depends_on": ["series.treatment", "series.beat_sheet", "source.story", "source.character.leena", "source.character.vale", "source.character.june", "source.voice_strategy"],
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "ep05.synopsis",
+      "path": "production/episodes/ep05_witness/synopsis.md",
+      "stage": "synopsis",
+      "status": "draft",
+      "episode": "ep05",
+      "authority_for": ["ep05.story", "ep05.production_notes", "ep05.broadcast_design"],
+      "depends_on": ["series.treatment", "series.beat_sheet", "source.story", "source.character.leena", "source.character.vale", "source.character.june", "source.anima_grammar", "source.voice_strategy"],
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "ep06.synopsis",
+      "path": "production/episodes/ep06_distance/synopsis.md",
+      "stage": "synopsis",
+      "status": "draft",
+      "episode": "ep06",
+      "authority_for": ["ep06.story", "ep06.production_notes", "voice.anima.choir_whisper"],
+      "depends_on": ["series.treatment", "series.beat_sheet", "source.story", "source.character.june", "source.character.anima", "source.voice_strategy"],
+      "last_updated": "2026-05-10",
+      "notes": "Introduces the choir-whisper voice and the adult-June Voice Design lineage. See QUESTIONS.md Q5."
+    },
+    {
+      "id": "lookdev.style_anchor",
+      "path": "production/lookdev/style_anchor.md",
+      "stage": "lookdev",
+      "status": "draft",
+      "authority_for": ["visual.style_anchor", "visual.aesthetic_rules"],
+      "depends_on": ["series.treatment", "source.anima_depiction"],
+      "last_updated": "2026-05-10",
+      "notes": "Spec written; the actual anchor PNG (style_anchor_watercolor.png) does not yet exist."
+    },
+    {
+      "id": "infra.coherence_engine",
+      "path": "production/coherence/coherence.py",
+      "stage": "infrastructure",
+      "status": "locked",
+      "authority_for": ["pipeline.coherence_check"],
+      "depends_on": [],
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "infra.coherence_registry",
+      "path": "production/coherence/registry.json",
+      "stage": "infrastructure",
+      "status": "locked",
+      "authority_for": ["pipeline.artifact_graph"],
+      "depends_on": [],
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "infra.dashboard_generator",
+      "path": "production/dashboard/generate.py",
+      "stage": "infrastructure",
+      "status": "locked",
+      "authority_for": ["pipeline.dashboard"],
+      "depends_on": ["infra.coherence_engine", "infra.coherence_registry"],
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "infra.review_queue",
+      "path": "production/REVIEW_QUEUE.md",
+      "stage": "infrastructure",
+      "status": "in_review",
+      "authority_for": ["pipeline.review_inbox"],
+      "depends_on": [],
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "infra.questions",
+      "path": "production/QUESTIONS.md",
+      "stage": "infrastructure",
+      "status": "in_review",
+      "authority_for": ["pipeline.gating_decisions"],
+      "depends_on": [],
+      "last_updated": "2026-05-10"
+    }
+  ]
+}
