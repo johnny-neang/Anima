@@ -155,12 +155,12 @@
       "id": "ep01.script",
       "path": "production/episodes/ep01_hunger/script.fountain",
       "stage": "script",
-      "status": "draft",
+      "status": "approved",
       "episode": "ep01",
       "authority_for": ["ep01.dialogue", "ep01.scene_breakdown"],
       "depends_on": ["ep01.synopsis", "series.beat_sheet", "source.story", "source.character.leena", "source.character.vale", "source.character.mira", "source.anima_grammar"],
       "last_updated": "2026-05-10",
-      "notes": "V1 Fountain draft; ~5500 words; 19-21 min target runtime."
+      "notes": "V1 approved 2026-05-10: kept Vale's second 'Cut the channel', Mira's chair audio-only, three cursor blinks."
     },
     {
       "id": "ep02.synopsis",
