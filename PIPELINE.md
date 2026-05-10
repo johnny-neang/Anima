@@ -30,6 +30,7 @@ Single source of truth for production state, blocking dependencies, and token-co
 
 ## Stage 0 — Pre-production specs
 
+- [x] **Locked source story:** [docs/story.md](docs/story.md) — _"The Second Dawn"_. Episode 1 "The Pronoun" cold-open is a thematic compression of the awakening, observation room, Geneva summit, and Operation Lantern tribunal moments.
 - [x] Voice cast spec — migrated to **ElevenLabs v3** with inline audio tags ([scripts/generate_vo.py](scripts/generate_vo.py))
 - [x] [docs/voice_strategy.md](docs/voice_strategy.md) — V3 tag palette + per-character voice search/design strategy
 - [x] Higgsfield Soul training pipeline doc ([refs/README.md](refs/README.md))
@@ -177,9 +178,8 @@ Pick at least one before opening the credit faucet:
 - ⚠️ **Concurrency limit:** basic plan = 1 Soul training in flight at a time. Budget ~30 min wall-clock to get all 3 Souls trained sequentially. Set a wakeup or check `show_characters action='status'` before each next trigger.
 - ⚠️ **Style drift on Shot 13** (per `refs/README.md`) — solved by always passing `refs/style/style_anchor_watercolor.png` as a reference. Anchor file does not yet exist.
 - ⚠️ **MCP description vs. behaviour for Soul training:** `images[]` accepts the public CDN URL form (`https://d2ol7oe51mr4n9.cloudfront.net/<user_path>/<media_id>.png`), NOT the raw `media_id` UUID despite what the description says. Documented in [refs/manifest.json](refs/manifest.json).
-- ❓ **`docs/anima_grammar.md`** referenced by code, never committed. Need source.
+- ❓ **Episode-by-episode breakdown of [docs/story.md](docs/story.md)** — Episode 1 "The Pronoun" currently has only an 8-shot cold-open. The body of Ep 1 + scoping for Ep 2+ (Tomasz / June homework-app phase / Geneva summit / Indus famine / Operation Lantern / Constitution / Great Diminishing / museum coda) is unwritten.
 - ❓ **Video model pricing** not yet probed on this account — first video gen calibrates the dominant spend line.
-- ❓ **Mira character path** undecided (one-off vs. trained Soul).
 
 ---
 

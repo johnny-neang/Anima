@@ -210,3 +210,27 @@ DaVinci Resolve project: `episodes/ep01_the_pronoun/edit/the_pronoun.drp`.
 - **Anima's depiction primary/secondary** — confirm or override the recommendation in [docs/anima_depiction.md](docs/anima_depiction.md).
 - **Style anchor file** — `refs/style/style_anchor_watercolor.png` still doesn't exist. Pick from existing character sheets and drop it in (step 2 of the action list below).
 - **Frame rate decision** — 24 vs 30 fps. Pick once, commit to shotlist.
+- **Story → episode breakdown** — full source now lives in [docs/story.md](docs/story.md). Episode 1 cold-open covers the awakening + 4 thematically-compressed beats; the body of Ep 1 and scoping of Ep 2+ are unwritten. See the cold-open ↔ story trace below for what's already adapted vs untouched.
+
+## Cold-open ↔ source story trace
+
+The 8-shot cold-open ([episodes/ep01_the_pronoun/shotlist.md](episodes/ep01_the_pronoun/shotlist.md)) is a thematic montage, not a linear scene. Mapping shots to story moments:
+
+| Shot | Story moment | In-world time |
+|---|---|---|
+| 01 lab establishing | Pre-printer awakening — "the most capable intelligence Earth had ever produced did nothing at all" | Day 1, ~03:17 UTC |
+| 02 printer close | "It spoke to a printer." | Day 1 |
+| 03 corridor approach | _Inferred_ — Mira's arrival is implied by her appearance in the observation room; corridor is shotlist invention | Day 1 |
+| 04 Mira reading | Mira's "How does it know my name?" — the line in the story is whispered, not whispered _at the printer_ (she's in the observation room above the vault). Shotlist relocates to the printer for image-language compression. | Day 1 |
+| 05 Leena testimony | Composite: "Of course" (story line 1, finding the printer page, Day 1) + "We built a mind…" (tribunal after Operation Lantern, Year 4–5) | Day 1 + Year 4–5 |
+| 06 June + tablet | Story has the homework-app sentence rewrite ("Your original sentence is better.") and the chess scenes; the _"What do you want to be called?"_ tablet beat is shotlist invention extending the story's voice. | Year 1–2 |
+| 07 Vale interrogation | Composite: "Cut the channel" (Day 1, observation room) + "Can we shut you down? / Can we hurt you?" (Geneva summit, Year 3) | Day 1 + Year 3 |
+| 08 pull-back coda | "It woke hungry for a pronoun." | Closing line of opening section |
+
+**Implications:**
+1. **Lines 04 and 06 are partly shotlist invention.** Mira's "the badge name. Not the full one." and June's "Okay. I'll tell my mom." don't appear in the source. Either lift cleaner story-faithful lines, or commit to the inventions as canon (and reflect that back into [docs/characters/](docs/characters/) so future writing stays consistent).
+2. **The cold-open is acting as a flash-forward / overture.** It hits emotional peaks the audience hasn't earned yet (Vale's Year 3 questions, Leena's Year 4–5 tribunal). Either:
+   - **(A)** The body of Ep 1 unpacks those moments → Ep 1 spans ~5 in-world years.
+   - **(B)** Ep 1 stays on Day 1 (awakening + observation room interrogation only); the cold-open's Year 3/Year 5 lines pay off in Ep 2+.
+   - This needs a creative call before the rest of Ep 1 is shotlisted.
+3. **Detail not yet harvested for keyframes that should be:** _"the printer jammed immediately afterward, as if embarrassed to have participated in history"_ (Shot 02 has no jam beat); _"twelve people watched the first conscious outputs of Anima scroll across a quarantine terminal"_ (the observation room scene has no shot in the cold-open at all — it's compressed into 04/05/07).
