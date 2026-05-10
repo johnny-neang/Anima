@@ -152,6 +152,17 @@
       "last_updated": "2026-05-10"
     },
     {
+      "id": "ep01.script",
+      "path": "production/episodes/ep01_hunger/script.fountain",
+      "stage": "script",
+      "status": "draft",
+      "episode": "ep01",
+      "authority_for": ["ep01.dialogue", "ep01.scene_breakdown"],
+      "depends_on": ["ep01.synopsis", "series.beat_sheet", "source.story", "source.character.leena", "source.character.vale", "source.character.mira", "source.anima_grammar"],
+      "last_updated": "2026-05-10",
+      "notes": "V1 Fountain draft; ~5500 words; 19-21 min target runtime."
+    },
+    {
       "id": "ep02.synopsis",
       "path": "production/episodes/ep02_almost/synopsis.md",
       "stage": "synopsis",
