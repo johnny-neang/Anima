@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && python3 production/coherence/coherence.py check 2>&1 | sed 's/^/[coherence] /' || true"
+          },
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && python3 production/dashboard/generate.py 2>&1 | sed 's/^/[dashboard] /' || true"
+          }
+        ]
+      }
+    ]
+  },
+  "_comment": "Stop hooks fire at the end of every assistant turn. (1) coherence check: detects stale artifacts. (2) dashboard regen: updates production/dashboard/index.html. Both are non-blocking (|| true). To disable, remove the entry. Manual triggers: `python3 production/coherence/coherence.py check` and `python3 production/dashboard/generate.py`."
+}
